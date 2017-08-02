@@ -111,7 +111,11 @@ internal class DeniedAlert: PermissionAlert {
     
     override init(permission: Permission) {
         super.init(permission: permission)
-        
+
+        dump(permission)
+//        if type == Permission.locationWhenInUse {
+//            print("Permission.locationWhenInUse")
+//        }
         title    = "Permission for \(permission) was denied"
         message  = "Please enable access to \(permission) in the Settings app."
         cancel   = "Cancel"
