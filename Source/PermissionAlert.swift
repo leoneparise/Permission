@@ -112,14 +112,19 @@ internal class DeniedAlert: PermissionAlert {
     override init(permission: Permission) {
         super.init(permission: permission)
 
-        dump(permission)
-//        if type == Permission.locationWhenInUse {
-//            print("Permission.locationWhenInUse")
-//        }
-        title    = "Permission for \(permission) was denied"
-        message  = "Please enable access to \(permission) in the Settings app."
-        cancel   = "Cancel"
-        settings = "Settings"
+        switch permission.type {
+        case .locationWhenInUse, .locationAlways:
+            title    = NSLocalizedString("locationPermissionDeniedTitle", comment: "")
+            message  = NSLocalizedString("locationPermissionDeniedText", comment: "")
+            cancel   = NSLocalizedString("Cancel", comment: "")
+            settings = NSLocalizedString("Settings", comment: "")
+
+        default:
+            title    = "Permission for \(permission) was denied"
+            message  = "Please enable access to \(permission) in the Settings app."
+            cancel   = "Cancel"
+            settings = "Settings"
+        }
     }
     
     @objc func settingsHandler() {
