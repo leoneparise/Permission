@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Permission
+
+  Created by AndrewPetrov on 8/2/17.
+  Copyright © 2017 delba. All rights reserved.
+*/
+
+"locationPermissionDeniedTitle" = "Die Ortungsfunktion ist deaktiviert";
+"locationPermissionDeniedText" = "Zur Nutzung dieser Funktion aktivieren Sie diese bitte in den Einstellungen";
+"Cancel" = "Abbrechen";
+"Settings" = "Einstellungen";
+
